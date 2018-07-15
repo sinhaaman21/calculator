@@ -1,0 +1,72 @@
+<!doctype html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//ES"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<Title>Basic Calculator</Title>
+		<Style type="text/css">
+
+		</style>
+		<script type = "text/javascript">
+			
+			var a=0 ;
+			var b=0 ;
+			function setValues(){
+				a = Number(document.getElementById("a").value);
+				b = Number(document.getElementById("b").value);
+				c = Number(document.getElementById("c").value);
+				d = Number(document.getElementById("d").value);
+				e = Number(document.getElementById("e").value);
+				f = Number(document.getElementById("f").value);
+				g = Number(document.getElementById("g").value);
+				h = Number(document.getElementById("h").value);	
+			}
+			function sum(){
+				setValues()
+				result= a+b;
+				alert("the sum is "+result);
+			}
+			function sub(){
+				setValues()
+				result= c-d;
+				alert("the sub is "+result);
+			}
+			function multiply(){
+				setValues()
+				result= e*f;
+				alert("the multiply is "+result);
+			}
+			function divide(){
+				setValues()
+				result= g/h;
+				alert("the div is "+result);
+			} 
+
+		</script>		
+	</head>
+	<body>
+		<div>
+			<p><h2>Basic Calculator</h2></p>
+			<p>
+				<input id="a" type="text"/>
+				<input id="b" type="text"/>
+				<input type="button" onclick="sum()" value="sum"/>				
+			</p>
+			<p>
+				<input id="c" type="text"/>
+				<input id="d" type="text"/>
+				<input type="button" onclick="sub()" value="sub"/>
+			</p>
+			<p>
+				<input id="e" type="text"/>
+				<input id="f" type="text"/>
+				<input type="button" onclick="multiply()" value="multiply"/>
+			</p>
+			<p>
+				<input id="g" type="text"/>
+				<input id="h" type="text"/>
+				<input type="button" onclick="divide()" value="divide"/>
+			</p>	
+		</div>
+	</body>
+</html>

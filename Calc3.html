@@ -1,0 +1,76 @@
+<!doctype html PUBLIC "-//W3C//Dtd XHTML 1.0 Transitional//ES"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+	<head>
+		<Title>Basic Calculator</Title>
+		<Style type="text/css">
+
+		</style>
+		<script type = "text/javascript">
+			
+			var a=0 ;
+			var b=0 ;
+			function setValues(){
+				a = Number(document.getElementById("a").value);
+				b = Number(document.getElementById("b").value);
+				c = Number(document.getElementById("c").value);
+				d = Number(document.getElementById("d").value);
+				e = Number(document.getElementById("e").value);
+				f = Number(document.getElementById("f").value);
+				g = Number(document.getElementById("g").value);
+				h = Number(document.getElementById("h").value);	
+			}
+			function sum(){
+				setValues()
+				result= a+b;				
+				var sum_result = document.getElementById("sum_result").value = result;		
+			}
+			function sub(){
+				setValues()
+				result= c-d;
+				var sub_result = document.getElementById("sub_result").value = result;
+			}
+			function multiply(){
+				setValues()
+				result= e*f;
+				var mult_result = document.getElementById("mult_result").value = result;
+			}
+			function divide(){
+				setValues()
+				result= g/h;
+				var div_result = document.getElementById("div_result").value = result;
+			} 
+
+		</script>		
+	</head>
+	<body>
+		<div>
+			<p><h2>Basic Calculator</h2></p>
+			<p>
+				<input id="a" type="text"/>
+				<input id="b" type="text"/>
+				<input type="button" onclick="sum()" value="sum"/>	
+				<input id="sum_result" type="text" value="">		
+			</p>
+			<p>
+				<input id="c" type="text"/>
+				<input id="d" type="text"/>
+				<input type="button" onclick="sub()" value="sub"/>
+				<input id="sub_result" type="text" value="">
+			</p>
+			<p>
+				<input id="e" type="text"/>
+				<input id="f" type="text"/>
+				<input type="button" onclick="multiply()" value="multiply"/>
+				<input id="mult_result" type="text" value="">
+			</p>
+			<p>
+				<input id="g" type="text"/>
+				<input id="h" type="text"/>
+				<input type="button" onclick="divide()" value="divide"/>
+				<input id="div_result" type="text" value="">
+			</p>	
+		</div>
+	</body>
+</html>
