@@ -5,75 +5,129 @@
 	<head>
 		<Title>Basic Calculator</Title>
 		<Style type="text/css">
-
+			.numbutton,.numoprator,#equal{
+				width:50px;
+				height:50px;
+				background-color: #00c4ff; 				
+			}
+			.display{
+				width: 209px;
+				height: 42px;
+				text-align:right;
+			}
+			.newcalc{
+					margin-top: 50px; 
+				    width: 222px;
+			}
+			
+			.newcalc .numbutton, .newcalc .numoprator{
+				background-color: #f2c4ff; 	
+			}
 		</style>
-		<script type = "text/javascript">	
-				function displaynum(n1)
-				{				
-				document.getElementById("display").value += n1;				
-				}
-				function result(){
-				document.getElementById("display").value = eval(document.getElementById("display").value);
-
-				}
-			/*	function one(){	var a = document.getElementById("a").value = "1";}
-				function two(){	var a = document.getElementById("a").value = "2";}
-				function three(){ var a = document.getElementById("a").value = "3";}
-				function four(){ var a = document.getElementById("a").value = "4";}
-				function five(){ var a = document.getElementById("a").value = "5";}
-				function six(){	var a = document.getElementById("a").value = "6";}
-				function seven(){ var a = document.getElementById("a").value = "7";}
-				function eight(){ var a = document.getElementById("a").value = "8";}
-				function nine(){ var a = document.getElementById("a").value = "9";}
-				function zero(){ var a = document.getElementById("a").value = "0";}
-				function decimal(){ var a = document.getElementById("a").value = ".";}
-				function addition(){ var a = document.getElementById("a").value = "+";}
-				function substract(){ var a = document.getElementById("a").value = "-";}
-				function multiply(){ var a = document.getElementById("a").value = "*";}
-				function divide(){ var a = document.getElementById("a").value = "/";}	*/	
-		</script>		
+		
 	</head>
 	<body>
 	<form name = "calc">
 		<table>
 			<tr>
 				<td>
-					<input name="display" id="display" style="text-align:right" type="text" />
+					<input name="display" class="display" id="display"  style="text-align:right" type="text" />
 				</td>
 			</tr>
 			<tr>
 				<td> 
-					<input id="one" type='button' value="1" onclick="displaynum(one.value)"/>
-					<input id="two" type='button' value="2" onclick="displaynum(two.value)"/>
-					<input id="three" type='button' value="3" onclick="displaynum(three.value)"/>
-					<input id="addition" type='button' value="+" onclick="displaynum(addition.value)"/>
+					<input class="numbutton" type='button' value="1" />
+					<input class="numbutton" type='button' value="2" />
+					<input class="numbutton" type='button' value="3"/>
+					<input class="numoprator" type='button' value="+" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input id="four" type='button' value="4" onclick="displaynum(four.value)"/>
-					<input id="five" type='button' value="5" onclick="displaynum(five.value)"/>
-					<input id="six" type='button' value="6" onclick="displaynum(six.value)"/>
-					<input id="substract" type='button' value="-" onclick="displaynum(substract.value)"/>
+					<input class="numbutton" type='button' value="4" />
+					<input class="numbutton" type='button' value="5" />
+					<input class="numbutton" type='button' value="6" />
+					<input class="numoprator" type='button' value="-" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input id="seven" type='button' value="7" onclick="displaynum(seven.value)"/>
-					<input id="eight" type='button' value="8" onclick="displaynum(eight.value)"/>
-					<input id="nine" type='button' value="9" onclick="displaynum(nine.value)"/>
-					<input id="multiply" type='button' value="*" onclick="displaynum(multiply.value)"/>
+					<input class="numbutton" type='button' value="7" />
+					<input class="numbutton" type='button' value="8" />
+					<input class="numbutton" type='button' value="9" />
+					<input class="numoprator" type='button' value="*" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input id="zero" type='button' value="0" onclick="displaynum(zero.value)"/>
-					<input id="decimal" type='button' value="." onclick="displaynum(decimal.value)"/>
+					<input class="numbutton" type='button' value="0" />
+					<input class="numbutton" type='button' value="." />
 					<input id="equal" type='button' value="=" onclick="result()"/>
-					<input id="divide" type='button' value="/" onclick="displaynum(divide.value)"/>
+					<input class="numoprator" type='button' value="/" />
 				</td>
 			</tr>
 		</table>
-	</form>	
+	</form>
+<div class="newcalc">
+	<input id="displaynew" class="display"  type="text" />
+	<input class="numbutton" type='button' value="1" />
+	<input class="numbutton" type='button' value="2" />
+	<input class="numbutton" type='button' value="3"/>
+	<input class="numoprator" type='button' value="+" />
+	<input class="numbutton" type='button' value="4" />
+	<input class="numbutton" type='button' value="5" />
+	<input class="numbutton" type='button' value="6" />
+	<input class="numoprator" type='button' value="-" />
+	<input class="numbutton" type='button' value="7" />
+	<input class="numbutton" type='button' value="8" />
+	<input class="numbutton" type='button' value="9" />
+	<input class="numoprator" type='button' value="*" />
+	<input class="numbutton" type='button' value="0" />
+	<input class="numbutton" type='button' value="." />
+	<input id="equal" type='button' value="=" onclick="result()"/>
+	<input class="numoprator" type='button' value="/" />
+</div>	
+	
+	<script type = "text/javascript">	
+				var tempnum = "";
+				
+				
+				
+				var numbers = [];
+				function displaynum(n1)
+				{	tempnum=tempnum+n1;
+					document.getElementById("display").value += n1;
+				}
+				function displayoprator(o){
+					document.getElementById("display").value += o;
+					numbers.push(parseInt(tempnum));
+					tempnum = "";
+					numbers.push(o);
+				}
+				
+				
+				
+				function result(){
+				document.getElementById("display").value = eval(document.getElementById("display").value);
+
+				}
+							
+				var numbuttons = document.getElementsByClassName("numbutton");
+				
+				for (var i=0; i < numbuttons.length; i++){
+					numbuttons[i].addEventListener("click", function(){
+						displaynum(this.value);
+					});
+				}
+				var numoprators = document.getElementsByClassName("numoprator");
+				
+				for (var i=0; i < numoprators.length; i++){
+					numoprators[i].addEventListener("click", function(){
+						displayoprator(this.value);
+					});
+				}
+			
+		</script>		
+	
 	</body>
 </html>
